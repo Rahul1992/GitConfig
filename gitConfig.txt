@@ -1,0 +1,135 @@
+Git Setup Guide
+
+
+Git colors
+If you are using git through the shell (which you should), you may want to enhance it with some nice colors, by adding this to your ~/.gitconfig file.
+ # My .gitconfig
+ # C&P from http://cheat.errtheblog.com/s/git
+
+
+
+
+[user]
+
+name = YOUR_NAME
+
+email = YOUR_USERNAME
+
+
+
+[color]
+
+ui = auto
+
+
+
+[color "branch"]
+
+current = yellow reverse
+
+local = yellow
+
+remote = green
+
+
+
+[color "diff"]
+
+meta = yellow bold
+
+frag = magenta bold
+
+old = red bold
+
+new = green bold
+
+
+
+[color "status"]
+
+added = yellow
+
+changed = green
+
+untracked = cyan
+
+
+
+[alias]
+
+st = status
+
+ci = commit
+
+cm = commit -m
+
+cam = commit -am
+
+br = branch
+
+co = checkout
+
+df = diff
+
+dc = diff --cached
+
+lg = log -p
+
+lol = log --graph --decorate --pretty=oneline --abbrev-commit
+
+lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+ls = ls-files
+
+
+
+# Show files ignored by git:
+
+ign = ls-files -o -i --exclude-standard
+
+
+Git tricks
+
+What did I do yesterday?
+
+$ git config --global alias.yesterday "log --since 1.day.ago --decorate --oneline --author `git config
+user.email`"
+ $ git yesterday
+ $ git yesterday -p
+ $ git yesterday --stat
+ 
+Git autocomplete
+
+$ cd ~
+ $ curl https://github.com/git/git/raw/master/contrib/completion/git-completion.bash -OL
+ $ nano ~/.bash_profile
+and add the following:
+source ~/git-completion.bash
+
+
+Misc
+Git resources
+Need help with Git? You can check the following resources:
+Git Walkthroughs
+Simple git guide
+Git Immersion
+Let’s Suck at GitHub Together Git for designers
+Think like a Git
+On the path Gitflow
+Git books
+Pro Git
+Git from the Ground Up Getting Good With Git
+References
+Gitref
+Github’s help documents Git Ready
+Articles
+A Successful Git Branching Model Exploring HTML Prototypes with Git
+Clients
+SourceTree (Win & OSX) Git Tower (OSX)
+Git Box (OSX)
+GitHub for Mac (OSX) Deploy Button
+FTPloy
+Training
+Online Github Training Git Branching
+Sources
+http://superuser.com/questions/56134/how-to-upgrade-git-on-ubuntu-hardy http://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-integration http://bradfrostweb.com/blog/post/gitgithub-resources/
